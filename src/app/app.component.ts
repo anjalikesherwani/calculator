@@ -9,6 +9,21 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
+
 export class AppComponent {
-  title = 'cala';
+  stringtoEvalutate:string=" "
+ 
+takeinput(num:string){
+ this.stringtoEvalutate=this.stringtoEvalutate+num;
+ 
+  }
+ 
+evaluateresult(){
+  if(this.stringtoEvalutate != " "){
+    this.stringtoEvalutate=eval(this.stringtoEvalutate);
+  }
+}  
+resetevaluate(){
+  this.stringtoEvalutate=" ";
+}
 }
